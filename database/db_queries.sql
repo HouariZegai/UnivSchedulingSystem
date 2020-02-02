@@ -71,18 +71,18 @@ INSERT INTO spécialité (id_speci, nom_speci, description) VALUES (4, "3L", nul
 INSERT INTO spécialité (id_speci, nom_speci, description) VALUES (5, "2L", null);
 INSERT INTO spécialité (id_speci, nom_speci, description) VALUES (6, "1L", null);
 
-INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (1, 1, "Master 2"); -- 2eme Master GL
-INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (2, 2, "Master 2"); -- 2eme Master GI
-INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (3, 3, "Master 2"); -- 2eme Master RT
-INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (4, 1, "Master 1"); -- 1er Master GL
-INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (5, 2, "Master 1"); -- 1er Master GI
-INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (6, 3, "Master 1"); -- 1er Master RT
-INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (7, 4, "3eme Licence");
-INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (8, 5, "2eme Licence");
-INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (9, 6, "Section 1"); -- L1 Section 1
-INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (10, 6, "Section 2"); -- L1 Section 2
-INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (11, 6, "Section 3"); -- L1 Section 3
-INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (12, 6, "Section 4"); -- L1 Section 4
+INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (1, 1, "2MGL"); -- 2eme Master GL
+INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (2, 2, "2MGI"); -- 2eme Master GI
+INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (3, 3, "2MRT"); -- 2eme Master RT
+INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (4, 1, "1MGL"); -- 1er Master GL
+INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (5, 2, "1MGI"); -- 1er Master GI
+INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (6, 3, "1MRT"); -- 1er Master RT
+INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (7, 4, "3L"); -- Licence 3
+INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (8, 5, "2L"); -- Licence 2
+INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (9, 6, "1LS1"); -- L1 Section 1
+INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (10, 6, "1LS2"); -- L1 Section 2
+INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (11, 6, "1LS3"); -- L1 Section 3
+INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (12, 6, "1LS4"); -- L1 Section 4
 
 INSERT INTO modules (id_mod, nom_mod, description) VALUES (1, "GPI", null);
 INSERT INTO modules (id_mod, nom_mod, description) VALUES (2, "Android", null);
