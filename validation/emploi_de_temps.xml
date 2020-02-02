@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emploi xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="file:/C:/Users/Houari/Documents/Learn/Projects/XML/UnivSchedulingSystem/validation/emploi_de_temps.xsd">
+    <seance jour="Mercredi" debut="08:00" fin="09:30" prof="A" module="XML" salle="15" />
+    <seance jour="Mercredi" debut="09:30" fin="11:00" prof="B" module="Anglais" salle="Amphi A" />
+</emploi>

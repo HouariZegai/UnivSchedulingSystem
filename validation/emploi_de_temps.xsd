@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xsd:element name="emploi">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="seance" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:attribute name="jour" type="jour_type" use="required" />
+                        <xsd:attribute name="debut" type="time_type" use="required" />
+                        <xsd:attribute name="fin" type="time_type" use="required" />
+                        <xsd:attribute name="prof" type="xsd:string" use="required" />
+                        <xsd:attribute name="module" type="xsd:string" use="required" />
+                        <xsd:attribute name="salle" type="xsd:string" use="required" />
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="promotion" type="promotion_type" />
+        </xsd:complexType>
+    </xsd:element>
+    
+    <xsd:simpleType name="promotion_type">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="2MGL" />
+            <xsd:enumeration value="2MGI" />
+            <xsd:enumeration value="2MRT" />
+            <xsd:enumeration value="1MGL" />
+            <xsd:enumeration value="1MGI" />
+            <xsd:enumeration value="1MRT" />
+            <xsd:enumeration value="3L" />
+            <xsd:enumeration value="2L" />
+            <xsd:enumeration value="1L" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="jour_type">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Samedi" />
+            <xsd:enumeration value="Dimanche" />
+            <xsd:enumeration value="Lundi" />
+            <xsd:enumeration value="Mardi" />
+            <xsd:enumeration value="Mercredi" />
+            <xsd:enumeration value="Jeudi" />
+            <xsd:enumeration value="Vendredi" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="time_type">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="(([01][\d])|([2][0-3])|[\d]):[0-6]?[\d]" />
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>
