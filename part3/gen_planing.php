@@ -1,7 +1,8 @@
 <?php
-
-    // selected promotion
-    $promo = '2MGL';
+	
+    $promo = '2MGL'; // selected promotion
+    $output_path = '../';
+    $output_file_name = "planing";
     
     /* create a dom document with encoding utf8 */
     $domtree = new DOMDocument('1.0', 'UTF-8');
@@ -46,6 +47,4 @@
     /* get the xml printed */
     echo $domtree->saveXML();
 
-    $output_file_name = "planing";
-
-    $domtree->save("C:/Users/Houari/Documents/Learn/Projects/XML/UnivSchedulingSystem/part3/{$output_file_name}.xml");
+    $domtree->save("{$output_path}/{$output_file_name}.xml");
