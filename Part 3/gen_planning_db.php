@@ -1,7 +1,7 @@
 <?php
 
 $promo = '2MGL'; // selected promotion
-$output_file_name = "planing";
+$output_file_name = "planning";
 
 /* create a dom document with encoding utf8 */
 $domtree = new DOMDocument('1.0', 'UTF-8');
