@@ -1,6 +1,7 @@
 <?php
 
-$promo = $_GET['promo']; // selected promotion
+$niveau = $_GET['niveau']; // selected niveau
+$option = $_GET['option']; // selected option
 
 /* create a dom document with encoding utf8 */
 $domtree = new DOMDocument('1.0', 'UTF-8');
@@ -11,7 +12,7 @@ $xmlRoot = $domtree->createElement("emploi");
 $xmlRoot = $domtree->appendChild($xmlRoot);
 
 $promo_attr = $domtree->createAttribute('promotion');
-$promo_attr->value = $promo;
+$promo_attr->value = $option;
 $xmlRoot->appendChild($promo_attr);
 
 function addSeanceToXMLEmploi($jour, $debut, $fin, $prof, $module, $salle) {
@@ -58,8 +59,18 @@ TIME_FORMAT(cours.heure_debut, '%H:%i') AS debut,
 TIME_FORMAT(cours.heure_fin, '%H:%i') AS fin, 
 enseignant.nom_ens as prof, modules.nom_mod as module, salles.nom_salle as salle
 FROM cours, promotion, enseignant, modules, salles 
-WHERE cours.id_promo in (SELECT id_promo FROM promotion WHERE niveau='{$promo}') 
+WHERE cours.id_promo = (SELECT id_promo FROM promotion WHERE promotion.niveau = '{$niveau}' 
+AND promotion.id_speci = (SELECT id_speci FROM spécialité WHERE nom_speci = '{$option}')) 
 AND cours.id_promo = promotion.id_promo AND cours.id_ens = enseignant.id_ens AND cours.id_salle = salles.id_salle AND cours.id_mod = modules.id_mod 
+ORDER BY cours.id_cours;";
+
+/* Just for testing */
+$sql = "SELECT cours.jour, 
+TIME_FORMAT(cours.heure_debut, '%H:%i') AS debut, 
+TIME_FORMAT(cours.heure_fin, '%H:%i') AS fin, 
+enseignant.nom_ens as prof, modules.nom_mod as module, salles.nom_salle as salle
+FROM cours, promotion, enseignant, modules, salles 
+WHERE cours.id_promo = promotion.id_promo AND cours.id_ens = enseignant.id_ens AND cours.id_salle = salles.id_salle AND cours.id_mod = modules.id_mod 
 ORDER BY cours.id_cours;";
 
 $result = $conn->query($sql);
@@ -69,7 +80,7 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         addSeanceToXMLEmploi($row["jour"], $row["debut"], $row["fin"], $row["prof"], $row["module"], $row["salle"]);
-        echo $row["jour"] . $row["debut"] . $row["fin"] . $row["prof"] . $row["module"] . $row["salle"];
+        // echo $row["jour"] . $row["debut"] . $row["fin"] . $row["prof"] . $row["module"] . $row["salle"];
     }
 
     /* get the xml printed */

@@ -1,6 +1,6 @@
 
 
-function getPlanning(promo) {
+function getPlanning(niveau, option) {
     var xhttp;
 
     if (window.XMLHttpRequest) { // is modern browser?
@@ -16,11 +16,11 @@ function getPlanning(promo) {
         }
     };
 
-    xhttp.open("GET", "../core/php/get_emploi.php?promo=" + promo, true);
+    xhttp.open("GET", "php/get_emploi.php?niveau=" + niveau + "&option=" + option, true);
     xhttp.send();
 }
 
-function handleResult(xmlResponse) {
+function handleResult(xml) {
     var i,
     xmlDoc = xml.responseXML,
     table = document.getElementById('tablePlanning'),
