@@ -1,9 +1,7 @@
 <?php
     
-    $option = 'MGL';
-    $niveau = '2';
-    $output_path = '../';
-    $output_file_name = "promotion";
+    $option = $_GET['option'];
+    $niveau = $_GET['niveau'];
     
     /* create a dom document with encoding utf8 */
     $domtree = new DOMDocument('1.0', 'utf-8');
@@ -30,7 +28,7 @@
         }
         
     } else {
-        echo "0 etudiants";
+        // echo "0 etudiants";
     }
 
     $sql_get_modules = "SELECT DISTINCT modules.id_mod AS idModule, modules.nom_mod as nomModule
@@ -52,15 +50,11 @@
         }
         
     } else {
-        echo "0 modules";
+        // echo "0 modules";
     }
 
     /* get the xml printed */
     echo $domtree->saveXML();
-
-    echo "Done!";
-
-    $domtree->save("{$output_path}/{$output_file_name}.xml");
 
     function appendAttribute($element, $attributeName, $attributeValue) {
         global $domtree;
