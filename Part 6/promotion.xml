@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<promotion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:noNamespaceSchemaLocation="promotion_schema.xsd">
+<promotion>
     <etudiants>
         <etudiant numInscription="1" nom="ZEGAI" prenom="Houari"/>
         <etudiant numInscription="2" nom="ZEGAI" prenom="Mohamed"/>

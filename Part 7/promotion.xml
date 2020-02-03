@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<promotion option="MGL" niveau="2"><etudiants><etudiant numInscription="E200" nom="X" prenom="Y"/><etudiant numInscription="E201" nom="X" prenom="Y"/><etudiant numInscription="E202" nom="X" prenom="Y"/></etudiants><modules><module numInscription="E200" nomModule="Web 2.0"/><module numInscription="E201" nomModule="Web 2.0"/><module numInscription="E202" nomModule="Web 2.0"/></modules></promotion>

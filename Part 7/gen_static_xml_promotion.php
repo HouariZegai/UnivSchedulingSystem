@@ -2,7 +2,8 @@
     
     $option = 'MGL';
     $niveau = '2';
-    $output_file_name = "promotion";
+    $output_path = '../';
+    $output_file_name = "promotion_static";
     
     /* create a dom document with encoding utf8 */
     $domtree = new DOMDocument('1.0', 'UTF-8');
@@ -33,7 +34,7 @@
 
     echo "Done!";
 
-    $domtree->save("{$output_file_name}.xml");
+    $domtree->save("{$output_path}/{$output_file_name}.xml");
 
     function appendAttribute($element, $attributeName, $attributeValue) {
         global $domtree;

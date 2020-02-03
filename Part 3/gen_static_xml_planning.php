@@ -2,7 +2,7 @@
 	
     $promo = '2MGL'; // selected promotion
     $output_path = '../';
-    $output_file_name = "planning";
+    $output_file_name = "planning_static";
     
     /* create a dom document with encoding utf8 */
     $domtree = new DOMDocument('1.0', 'UTF-8');
