@@ -83,9 +83,9 @@ INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (9, 6, "1"); -- L1 Sec
 
 INSERT INTO modules (id_mod, nom_mod, description) VALUES (1, "GPI", null);
 INSERT INTO modules (id_mod, nom_mod, description) VALUES (2, "Android", null);
-INSERT INTO modules (id_mod, nom_mod, description) VALUES (3, "Législation et déontologie de travail", null);
-INSERT INTO modules (id_mod, nom_mod, description) VALUES (4, "Technique d'expression et de la rédaction scientifique", null);
-INSERT INTO modules (id_mod, nom_mod, description) VALUES (5, "XML Avancé et Web 2.0", null);
+INSERT INTO modules (id_mod, nom_mod, description) VALUES (3, "Legislation et deontologie de travail", null);
+INSERT INTO modules (id_mod, nom_mod, description) VALUES (4, "Technique d'expression et de la redaction scientifique", null);
+INSERT INTO modules (id_mod, nom_mod, description) VALUES (5, "XML Avance et Web 2.0", null);
 INSERT INTO modules (id_mod, nom_mod, description) VALUES (6, "Maintenance logicielle", null);
 INSERT INTO modules (id_mod, nom_mod, description) VALUES (7, "Anglais", null);
 

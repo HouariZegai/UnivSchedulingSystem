@@ -27,15 +27,19 @@
             appendAttribute($etudiantElement, 'numInscription', $row["numInscription"]);
             appendAttribute($etudiantElement, 'nom', $row["nom"]);
             appendAttribute($etudiantElement, 'prenom', $row["prenom"]);
-
-            echo $row["numInscription"] . $row["nom"] . $row["prenom"];
         }
         
     } else {
         echo "0 etudiants";
     }
 
-    $sql_get_modules = "SELECT id_mod AS idModule, nom_mod AS nomModule FROM modules;";
+    $sql_get_modules = "SELECT DISTINCT modules.id_mod AS idModule, modules.nom_mod as nomModule
+    FROM cours, promotion, enseignant, modules, salles 
+    WHERE cours.id_promo = (SELECT id_promo FROM promotion WHERE promotion.niveau = '2' 
+    AND promotion.id_speci = (SELECT id_speci FROM spécialité WHERE nom_speci = 'MGL')) 
+    AND cours.id_promo = promotion.id_promo AND cours.id_ens = enseignant.id_ens AND cours.id_salle = salles.id_salle AND cours.id_mod = modules.id_mod 
+    ORDER BY cours.id_cours;";
+
     $result = $conn->query($sql_get_modules);
 
     if ($result->num_rows > 0) {
@@ -45,8 +49,6 @@
             $moduleElement = appendElement($modulesElement, 'module');
             appendAttribute($moduleElement, 'idModule', $row["idModule"]);
             appendAttribute($moduleElement, 'nomModule', $row["nomModule"]);
-
-            echo $row["idModule"] . ' ' . $row["nomModule"];
         }
         
     } else {
