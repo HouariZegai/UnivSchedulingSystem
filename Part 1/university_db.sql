@@ -16,7 +16,7 @@ CREATE TABLE promotion (
 	id_speci INT,
 	niveau VARCHAR(50)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE spécialité (
+CREATE TABLE specialite (
 	id_speci INT PRIMARY KEY AUTO_INCREMENT,
 	nom_speci VARCHAR(50),
 	description TEXT) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -51,7 +51,7 @@ CREATE TABLE enseignant (
 -- Constraints for tables
 --
 
-ALTER TABLE promotion ADD CONSTRAINT fk_promo FOREIGN KEY (id_speci) REFERENCES spécialité (id_speci);
+ALTER TABLE promotion ADD CONSTRAINT fk_promo FOREIGN KEY (id_speci) REFERENCES specialite (id_speci);
 
 ALTER TABLE cours 
 	ADD CONSTRAINT fk_cours FOREIGN KEY (id_promo) REFERENCES promotion (id_promo),
@@ -64,12 +64,12 @@ ALTER TABLE cours
 -- Insert data to tables
 --
 
-INSERT INTO spécialité (id_speci, nom_speci, description) VALUES (1, "MGL", null);
-INSERT INTO spécialité (id_speci, nom_speci, description) VALUES (2, "MGI", null);
-INSERT INTO spécialité (id_speci, nom_speci, description) VALUES (3, "MRT", null);
-INSERT INTO spécialité (id_speci, nom_speci, description) VALUES (4, "3L", null);
-INSERT INTO spécialité (id_speci, nom_speci, description) VALUES (5, "2L", null);
-INSERT INTO spécialité (id_speci, nom_speci, description) VALUES (6, "1L", null);
+INSERT INTO specialite (id_speci, nom_speci, description) VALUES (1, "MGL", null);
+INSERT INTO specialite (id_speci, nom_speci, description) VALUES (2, "MGI", null);
+INSERT INTO specialite (id_speci, nom_speci, description) VALUES (3, "MRT", null);
+INSERT INTO specialite (id_speci, nom_speci, description) VALUES (4, "3L", null);
+INSERT INTO specialite (id_speci, nom_speci, description) VALUES (5, "2L", null);
+INSERT INTO specialite (id_speci, nom_speci, description) VALUES (6, "1L", null);
 
 INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (1, 1, "2"); -- 2eme Master GL
 INSERT INTO promotion (id_promo, id_speci, niveau) VALUES (2, 2, "2"); -- 2eme Master GI
