@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xsd:element name="promotion">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="etudiants">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="etudiant" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:attribute name="numInscription" type="xsd:string" />
+                                    <xsd:attribute name="nom" type="xsd:string" />
+                                    <xsd:attribute name="prenom" type="xsd:string" />
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="modules">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="module" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:attribute name="idModule" type="xsd:string" />
+                                    <xsd:attribute name="nomModule" type="xsd:string" />
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="option" type="xsd:string" />
+            <xsd:attribute name="niveau" type="xsd:nonNegativeInteger" />
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
