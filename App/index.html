@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Gestion des emploi du temps</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../Resources/css/bootstrap.min.css">
+    </head>
+    <body>
+        
+        <div class="container" style="margin-top: 20px">
+            <h1 id="viewPromo">Svp, Selectionné la promotion pour le afficher</h1>
+            <div class="dropdown">
+                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Promotion
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="javascript:void(0);" onclick="getPlanningAndPromotion('2', 'MGL');">2MGL</a>
+                    <a class="dropdown-item" href="javascript:void(0);" onclick="getPlanningAndPromotion('2', 'MGI');">2MGI</a>
+                    <a class="dropdown-item" href="javascript:void(0);" onclick="getPlanningAndPromotion('2', 'MRT')">2MRT</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="javascript:void(0);" onclick="getPlanningAndPromotion('1', 'MGL');">1MGL</a>
+                    <a class="dropdown-item" href="javascript:void(0);" onclick="getPlanningAndPromotion('1', 'MGI');">1MGI</a>
+                    <a class="dropdown-item" href="javascript:void(0);" onclick="getPlanningAndPromotion('1', 'MRT');">1MRT</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="javascript:void(0);" onclick="getPlanningAndPromotion('3', 'L');">3L</a>
+                    <a class="dropdown-item" href="javascript:void(0);" onclick="getPlanningAndPromotion('2', 'L');">2L</a>
+                    <a class="dropdown-item" href="javascript:void(0);" onclick="getPlanningAndPromotion('1', 'L');">1L</a>
+                </div>
+            </div>
+            <br>
+            <h3>Promotion: <span id="promo" style="color: #2196f3"></span></h3>
+            <div id="tables"></div>
+
+            <h1 id="addPlanning">Ajouter un Emploi du temps</h1>
+            <!-- add new planning -->
+        </div>
+
+
+        <script src="../Resources/js/jquery-3.4.1.min.js"></script>
+        <script src="../Resources/js/bootstrap.bundle.min.js"></script>
+        <script src="../Resources/js/popper.js"></script>
+        <script src="../Resources/js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
