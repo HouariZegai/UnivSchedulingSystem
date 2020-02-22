@@ -1,0 +1,11 @@
+.header {
+    margin: 30px 40px
+}
+
+.header > p {
+    margin-top: 10px
+}
+
+.header > p > span {
+    color: #17a2b8;
+}

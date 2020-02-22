@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Gestion des emploi du temps</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../Resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/parts.css">
+    </head>
+    <body>
+        <div class="header">
+            <h1>Questions de Projet XML</h1>
+            <p>La reponse de chaque <span>question</span> du projet de module <span>XML Avancé et Web 2.0</span>.</p>
+        </div>
+
+        <div class="container" style="margin-bottom: 50px">
+            <a href="index.html"><button class="btn btn-info" style="display: block; float: right; margin-bottom: 15px">Retour vers Home</button></a>
+            <div class="card w-100" style="margin-bottom: 20px">
+                <div class="card-header" style="font-weight: 500; font-size: 18px">Question #1</div>
+                <div class="card-body">
+                    <p class="card-text">Créer et remplir la base de données par des données réelles correspondantes à votre emploi de temps</p>
+                    <a href="http://localhost/phpmyadmin/db_structure.php?server=1&db=university_db" target="_blank" class="btn btn-success">Voir solution</a>
+                </div>
+            </div>
+            <div class="card w-100" style="margin-bottom: 20px">
+                <div class="card-header" style="font-weight: 500; font-size: 18px">Question #2</div>
+                <div class="card-body">
+                    <p class="card-text">Créer un schéma XML (XSD) qui permet de décrire un emploi de temps</p>
+                    <a href="../Part 2/emploi_de_temps.xsd" onclick="onQ2Clicked();" target="_blank" class="btn btn-success">Voir solution</a>
+                </div>
+            </div>
+            <div class="card w-100" style="margin-bottom: 20px">
+                 <div class="card-header" style="font-weight: 500; font-size: 18px">Question #3</div>
+                <div class="card-body">
+                    <p class="card-text">Créer un script PHP qui permet de générer dynamiquement le fichier XML présentant les données de l’emploi du temps d’une promotion donnée.</p>
+                    <a href="../Part 3/gen_planning.php?niveau=2&option=MGL" target="_blank" class="btn btn-success">Voir solution</a>
+                </div>
+            </div>
+            <div class="card w-100" style="margin-bottom: 20px">
+                 <div class="card-header" style="font-weight: 500; font-size: 18px">Question #4</div>
+                <div class="card-body">
+                    <p class="card-text">Créer un script PHP, utilisant Ajax qui permet de :<br></p>
+                    <ul>
+                        <li>Sélectionner une promotion dans une liste déroulante.</li>
+                        <li>Après sélection de la promotion, afficher l’emploi du temps de cette promotion.</li>
+                    </ul>
+                    <a href="../Part 4/index.html" target="_blank" class="btn btn-success">Voir solution</a>
+                </div>
+            </div>
+            <div class="card w-100" style="margin-bottom: 20px">
+                 <div class="card-header" style="font-weight: 500; font-size: 18px">Question #5</div>
+                <div class="card-body">
+                    <p class="card-text">Créer une feuille de style XSL qui permet de transformer le fichier XML en une page HTML qui permet de présenter l’emploi du temps d’une promotion donnée.</p>
+                    <a href="../Part 5/xsl/planning.xsl" target="_blank" class="btn btn-success">Voir solution</a>
+                </div>
+            </div>
+            <div class="card w-100" style="margin-bottom: 20px">
+                 <div class="card-header" style="font-weight: 500; font-size: 18px">Question #6</div>
+                <div class="card-body">
+                    <p class="card-text">Créer un schéma XML qui permet de décrire la structure du fichier XML qui contient la liste des étudiants d’une promotion</p>
+                    <a href="../Part%206/promotion.xsd" target="_blank" class="btn btn-success">Voir solution</a>
+                </div>
+            </div>
+            <div class="card w-100" style="margin-bottom: 20px">
+                 <div class="card-header" style="font-weight: 500; font-size: 18px">Question #7</div>
+                <div class="card-body">
+                    <p class="card-text">Créer une page PHP qui permet de générer dynamiquement le fichier XML précédent</p>
+                    <a href="../Part 7/gen_promotion.php?niveau=2&option=MGL" target="_blank" class="btn btn-success">Voir solution</a>
+                </div>
+            </div>
+            <div class="card w-100" style="margin-bottom: 20px">
+                 <div class="card-header" style="font-weight: 500; font-size: 18px">Question #8</div>
+                <div class="card-body">
+                    <p class="card-text">Créer une feuille de style XSL qui permet de transformer une le fichier XML en un tableau HTML qui présente les étudiants et les modules de la promotion.</p>
+                    <a href="../Part%208/promotion.xsl" target="_blank" class="btn btn-success">Voir solution</a>
+                </div>
+            </div>
+            <div class="card w-100" style="margin-bottom: 20px">
+                 <div class="card-header" style="font-weight: 500; font-size: 18px">Question #9</div>
+                <div class="card-body">
+                    <p class="card-text">Créer une page HTML qui permet de :</p>
+                    <ul>
+                        <li>Sélectionner une promotion dans une liste</li>
+                        <li>Afficher dans la même page les étudiants et les modules de cette promotion.</li>
+                    </ul>
+                    <a href="../Part%209/promotion.html" target="_blank" class="btn btn-success">Voir solution</a>
+                </div>
+            </div>
+            <div class="card w-100" style="margin-bottom: 20px">
+                 <div class="card-header" style="font-weight: 500; font-size: 18px">Question #10</div>
+                <div class="card-body">
+                    <p class="card-text">Créer page principale en utilisant Ajax, XML et PHP pour la saisie d’un nouvel
+                        emploi du temps.</p>
+                    <a href="../App/index.html#addPlanning" target="_blank" class="btn btn-success">Voir solution</a>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/parts.js"></script>
+    </body>
+</html>

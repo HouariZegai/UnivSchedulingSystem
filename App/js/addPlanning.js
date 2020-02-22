@@ -141,11 +141,8 @@ function addPlanning() {
 
     doc.appendChild(emploiElem);
 
-    var blob = new Blob(["<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + new XMLSerializer().serializeToString(stringData)], { type: "text/xml;charset=utf-8" });
+    var blob = new Blob(["<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + new XMLSerializer().serializeToString(doc)], { type: "text/xml;charset=utf-8" });
     saveAs(blob, "planning.xml");
 
     document.getElementById("tbodyAddPlanning").innerText = "";
-}
-
-function saveData(stringData){
 }
