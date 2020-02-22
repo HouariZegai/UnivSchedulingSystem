@@ -1,0 +1,30 @@
+.bg-img {
+    /* The image used */
+    background-image: url("../img/banner-slider.jpg");
+
+    /* Control the height of the image */
+    min-height: 650px;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.header-container {
+    padding: 100px 0 0 200px;
+    ligne-spacing: 10px
+}
+
+.header-container > h1 {
+    color: #FFF;
+}
+
+.header-container > p {
+    padding-top: 15px;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFF;
+}

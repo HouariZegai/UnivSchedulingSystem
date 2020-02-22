@@ -14,7 +14,9 @@
 
     require 'db_config.php';
 
-    $sql_get_students = "SELECT num_et AS numInscription, nom_et AS nom, prenom_et AS prenom FROM etudiant;";
+    $sql_get_students = "SELECT DISTINCT num_et AS numInscription, nom_et AS nom, prenom_et AS prenom FROM etudiant, promotion, specialite
+                         WHERE etudiant.id_promo = (SELECT id_promo FROM promotion WHERE promotion.niveau = '{$niveau}'
+                             AND promotion.id_speci = (SELECT id_speci FROM specialite WHERE nom_speci = '{$option}'));";
     $result = $conn->query($sql_get_students);
 
     if ($result->num_rows > 0) {

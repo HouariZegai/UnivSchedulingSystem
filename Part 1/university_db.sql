@@ -8,7 +8,8 @@ CREATE TABLE etudiant(
 	num_et INT PRIMARY KEY AUTO_INCREMENT,
 	nom_et VARCHAR(50),
 	prenom_et VARCHAR(50),
-	adresse VARCHAR(50)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+	adresse VARCHAR(50),
+	id_promo INT) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE promotion (
@@ -52,6 +53,8 @@ CREATE TABLE enseignant (
 --
 
 ALTER TABLE promotion ADD CONSTRAINT fk_promo FOREIGN KEY (id_speci) REFERENCES specialite (id_speci);
+
+ALTER TABLE etudiant ADD CONSTRAINT fk_edutiant FOREIGN KEY (id_promo) REFERENCES promotion (id_promo);
 
 ALTER TABLE cours 
 	ADD CONSTRAINT fk_cours FOREIGN KEY (id_promo) REFERENCES promotion (id_promo),
@@ -134,18 +137,21 @@ INSERT INTO cours (id_cours, id_promo, id_ens, id_salle, id_mod, jour, heure_deb
 INSERT INTO cours (id_cours, id_promo, id_ens, id_salle, id_mod, jour, heure_debut, heure_fin) VALUES (12, 1, 7, 10, 6, "Jeudi", "08:00:00", "09:30:00");
 INSERT INTO cours (id_cours, id_promo, id_ens, id_salle, id_mod, jour, heure_debut, heure_fin) VALUES (13, 1, 7, 10, 6, "Jeudi", "09:30:00", "11:00:00");
 
-INSERT INTO etudiant (num_et,nom_et,prenom_et,adresse) VALUES (1, "ZEGAI", "Houari", "Cité Sidi Khaled N94 Tiaret");
-INSERT INTO etudiant (num_et,nom_et,prenom_et,adresse) VALUES (2, "BENCHOUHRA", "Anoir", null);
-INSERT INTO etudiant (num_et,nom_et,prenom_et,adresse) VALUES (3, "CHARFAOUI", "Younes", null);
-INSERT INTO etudiant (num_et,nom_et,prenom_et,adresse) VALUES (4, "BOURAS", "Mohamed Amine", null);
-INSERT INTO etudiant (num_et,nom_et,prenom_et,adresse) VALUES (5, "AYAD", "Toufik", null);
-INSERT INTO etudiant (num_et,nom_et,prenom_et,adresse) VALUES (6, "MADENE", "Malika", null);
-INSERT INTO etudiant (num_et,nom_et,prenom_et,adresse) VALUES (7, "NADJEM", "Nour Imen", null);
-INSERT INTO etudiant (num_et,nom_et,prenom_et,adresse) VALUES (8, "DAICH", "Hichem", null);
-INSERT INTO etudiant (num_et,nom_et,prenom_et,adresse) VALUES (9, "ZERROUKI", "Sofiane", null);
-INSERT INTO etudiant (num_et,nom_et,prenom_et,adresse) VALUES (10, "MAKBOUL", "Ilyes", null);
-INSERT INTO etudiant (num_et,nom_et,prenom_et,adresse) VALUES (11, "BENAYDEBI", "Benyoucef", null);
-INSERT INTO etudiant (num_et,nom_et,prenom_et,adresse) VALUES (12, "LANOUAR", "Miloud", null);
-INSERT INTO etudiant (num_et,nom_et,prenom_et,adresse) VALUES (13, "BENAYADA", "Yasmine", null);
-INSERT INTO etudiant (num_et,nom_et,prenom_et,adresse) VALUES (14, "ZIDANE", "Souhila", null);
-INSERT INTO etudiant (num_et,nom_et,prenom_et,adresse) VALUES (15, "CHAHB AYN", "Walaa", null);
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (1, "ZEGAI", "Houari", "Cité Sidi Khaled N94 Tiaret", 1);
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (2, "BENCHOUHRA", "Anoir", null, 1);
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (3, "CHARFAOUI", "Younes", null, 1);
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (4, "BOURAS", "Mohamed Amine", null, 1);
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (5, "AYAD", "Toufik", null, 1);
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (6, "MADENE", "Malika", null, 1);
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (7, "NADJEM", "Nour Imen", null, 1);
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (8, "DAICH", "Hichem", null, 1);
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (9, "ZERROUKI", "Sofiane", null, 1);
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (10, "MAKBOUL", "Ilyes", null, 1);
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (11, "BENAYDEBI", "Benyoucef", null, 1);
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (12, "LANOUAR", "Miloud", null, 1);
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (13, "BENAYADA", "Yasmine", null, 1);
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (14, "ZIDANE", "Souhila", null, 1);
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (15, "CHAHB AYN", "Walaa", null, 1);
+
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (16, "SMAILI", "Abdelkarim", null, 6);
+INSERT INTO etudiant (num_et, nom_et, prenom_et, adresse, id_promo) VALUES (17, "BOUAARRA", "Houcine", null, 4);
