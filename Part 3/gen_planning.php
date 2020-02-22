@@ -1,7 +1,7 @@
 <?php
 
-$niveau = '2'; // Selected niveau
-$promo = 'MGL'; // selected promotion
+$niveau = $_GET['niveau']; // Selected niveau
+$promo = $_GET['option']; // selected promotion
 $output_file_name = "planning";
 
 /* create a dom document with encoding utf8 */
@@ -52,12 +52,10 @@ TIME_FORMAT(cours.heure_fin, '%H:%i') AS fin,
 enseignant.nom_ens as prof, modules.nom_mod as module, salles.nom_salle as salle
 FROM cours, promotion, enseignant, modules, salles 
 WHERE cours.id_promo in (SELECT id_promo FROM promotion WHERE promotion.niveau = '{$niveau}' 
-AND promotion.id_speci = (SELECT id_speci FROM spécialité WHERE nom_speci = '{$promo}')) 
+AND promotion.id_speci = (SELECT id_speci FROM specialite WHERE nom_speci = '{$promo}')) 
 AND cours.id_promo = promotion.id_promo AND cours.id_ens = enseignant.id_ens 
 AND cours.id_salle = salles.id_salle AND cours.id_mod = modules.id_mod 
 ORDER BY cours.id_cours;";
-
-echo $sql . '<br><br>';
 
 $result = $conn->query($sql);
 
@@ -66,11 +64,15 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         addSeanceToXMLEmploi($row["jour"], $row["debut"], $row["fin"], $row["prof"], $row["module"], $row["salle"]);
-        echo "Jour: " . $row["jour"]. ", time: " . $row["debut"]. " - " . $row["fin"]. "<br>";
+        // echo "Jour: " . $row["jour"]. ", time: " . $row["debut"]. " - " . $row["fin"]. "<br>";
     }
 
+	/* for print in nice format */
+	$domtree->preserveWhiteSpace = false;
+	$domtree->formatOutput = true;
+
     /* get the xml printed */
-    echo $domtree->saveXML();
+    echo htmlentities($domtree->saveXML());
 
     $domtree->save("{$output_file_name}.xml");
 } else {
