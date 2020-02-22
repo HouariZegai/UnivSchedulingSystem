@@ -41,7 +41,8 @@
     </div>
 
     <div class="container" style="margin-top: 20px">
-            <h1 id="viewPromo">Svp, Selectionné la promotion pour le afficher</h1>
+            <h1 id="viewPromo">Afficher L'emploi du temps</h1>
+            <div class="alert alert-success"><strong>Svp, </strong> Selectionné la promotion pour le afficher!</div>
             <div class="dropdown">
                 <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Promotion
@@ -99,9 +100,94 @@
                 </table>
             </div>
 
-            <h1 id="addPlanning">Ajouter un Emploi du temps</h1>
+            <h1 id="addPlanning">Ajouter un Emploi du temps.</h1>
+            <div class="alert alert-success"><strong>Svp, </strong> Remplir l'emploi du temps pour le ajouter!</div>
+
             <!-- add new planning -->
+            <div class="row">
+                <div class="col-sm-3">
+                <form>
+                    <div class="form-group">
+                        <label for="formSelectJour">Jour</label>
+                        <select class="form-control" id="formSelectJour">
+                            <option disabled selected>Choisir</option>
+                            <option>Dimanche</option>
+                            <option>Lundi</option>
+                            <option>Mardi</option>
+                            <option>Mercredi</option>
+                            <option>Jeudi</option>
+                            <option>Vendredi</option>
+                            <option>Samedi</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formSelectHeureDebut">Heure de debut</label>
+                        <select class="form-control" id="formSelectHeureDebut">
+                            <option disabled selected>--:--</option>
+                            <option>08:00</option>
+                            <option>09:30</option>
+                            <option>11:00</option>
+                            <option>12:20</option>
+                            <option>14:00</option>
+                            <option>15:30</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formSelectHeureFin">Heure de fin</label>
+                        <select class="form-control" id="formSelectHeureFin">
+                            <option disabled selected>--:--</option>
+                            <option>08:00</option>
+                            <option>09:30</option>
+                            <option>11:00</option>
+                            <option>12:20</option>
+                            <option>14:00</option>
+                            <option>15:30</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formSelectProf">Prof</label>
+                        <select class="form-control" id="formSelectProf">
+                            <option disabled selected>Choisir</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formSelectModule">Module</label>
+                        <select class="form-control" id="formSelectModule">
+                            <option disabled selected>Choisir</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formSelectSalle">Salle</label>
+                        <select class="form-control" id="formSelectSalle">
+                            <option disabled selected>Choisir</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="form-control btn btn-info">Ajouter</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-8">
+                <h3 style="margin-top: 10px">Planning</h3>
+                <table class="table table-striped table-bordered" style="margin-top: 10px">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Jour</th>
+                        <th scope="col">Debut</th>
+                        <th scope="col">Fin</th>
+                        <th scope="col">Prof</th>
+                        <th scope="col">Module</th>
+                        <th scope="col">Salle</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbodyAddPlanning">
+
+                    </tbody>
+                </table>
+            </div>
         </div>
+    </div>
 
 
         <script src="../Resources/js/jquery-3.4.1.min.js"></script>
