@@ -1,5 +1,4 @@
 
-
 function getPlanning(niveau, option) {
     var xhttp;
 
@@ -10,19 +9,28 @@ function getPlanning(niveau, option) {
     }
 
     xhttp.onreadystatechange = function () {
+        console.log("helo");
         if (this.readyState == 4 && this.status == 200) {
             // display data when response is ready and the request finished
-            handleResult(this);
+            console.log("hello");
+            handleResult(this.responseText);
         }
     };
 
-    xhttp.open("GET", "php/get_emploi.php?niveau=" + niveau + "&option=" + option, true);
+    xhttp.open("GET", "php/get_planning.php?niveau=" + niveau + "&option=" + option, true);
     xhttp.send();
 }
 
 function handleResult(xml) {
+    console.log("handle result called!");
+
+    if(xml == null) {
+        console.log("xml is null");
+    } else
+        console.log("xml not null");
+
     var i,
-    xmlDoc = xml.responseXML,
+    xmlDoc = new DOMParser().parseFromString(xml, "text/xml"),
     table = document.getElementById('tablePlanning'),
     tbody = document.getElementById('tableBody'),
     x = xmlDoc.getElementsByTagName('seance');
