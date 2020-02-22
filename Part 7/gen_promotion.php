@@ -1,7 +1,7 @@
 <?php
-    
-    $option = 'MGL';
-    $niveau = '2';
+
+    $option = $_GET['option'];
+    $niveau = $_GET['niveau'];
     $output_path = '../';
     $output_file_name = "promotion";
     
@@ -16,7 +16,9 @@
 
     require 'db_config.php';
 
-    $sql_get_students = "SELECT num_et AS numInscription, nom_et AS nom, prenom_et AS prenom FROM etudiant;";
+    $sql_get_students = "SELECT DISTINCT num_et AS numInscription, nom_et AS nom, prenom_et AS prenom FROM etudiant, promotion
+    WHERE etudiant.id_promo = (SELECT id_promo FROM promotion WHERE promotion.niveau = '{$niveau}'
+    AND promotion.id_speci = (SELECT id_speci FROM specialite WHERE nom_speci = '{$option}'))";
     $result = $conn->query($sql_get_students);
 
     if ($result->num_rows > 0) {
@@ -34,9 +36,9 @@
     }
 
     $sql_get_modules = "SELECT DISTINCT modules.id_mod AS idModule, modules.nom_mod as nomModule
-    FROM cours, promotion, enseignant, modules, salles 
-    WHERE cours.id_promo = (SELECT id_promo FROM promotion WHERE promotion.niveau = '2' 
-    AND promotion.id_speci = (SELECT id_speci FROM spécialité WHERE nom_speci = 'MGL')) 
+    FROM cours, promotion, enseignant, modules, salles
+    WHERE cours.id_promo = (SELECT id_promo FROM promotion WHERE promotion.niveau = '{$niveau}'
+    AND promotion.id_speci = (SELECT id_speci FROM specialite WHERE nom_speci = '{$option}'))
     AND cours.id_promo = promotion.id_promo AND cours.id_ens = enseignant.id_ens AND cours.id_salle = salles.id_salle AND cours.id_mod = modules.id_mod 
     ORDER BY cours.id_cours;";
 
@@ -56,9 +58,7 @@
     }
 
     /* get the xml printed */
-    echo $domtree->saveXML();
-
-    echo "Done!";
+    echo htmlentities($domtree->saveXML());
 
     $domtree->save("{$output_path}/{$output_file_name}.xml");
 

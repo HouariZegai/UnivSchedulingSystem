@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Gestion des emploi du temps</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../Resources/css/bootstrap.min.css">
+    </head>
+    <body>
+    <div class="container" style="margin-top: 20px">
+        <h1 id="viewPromo">Afficher Promotion</h1>
+        <div class="alert alert-success"><strong>Svp, </strong> Selectionné la promotion pour afficher les etudiants et les Modules de celle-ci!</div>
+        <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Promotion
+            </button>
+            <a href="../App/index.html"><button class="btn btn-info" style="display: block; float: right">Retour vers Home</button></a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="javascript:void(0);" onclick="getPromotion('2', 'MGL');">2MGL</a>
+                <a class="dropdown-item" href="javascript:void(0);" onclick="getPromotion('2', 'MGI');">2MGI</a>
+                <a class="dropdown-item" href="javascript:void(0);" onclick="getPromotion('2', 'MRT')">2MRT</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="javascript:void(0);" onclick="getPromotion('1', 'MGL');">1MGL</a>
+                <a class="dropdown-item" href="javascript:void(0);" onclick="getPromotion('1', 'MGI');">1MGI</a>
+                <a class="dropdown-item" href="javascript:void(0);" onclick="getPromotion('1', 'MRT');">1MRT</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="javascript:void(0);" onclick="getPromotion('3', 'L');">3L</a>
+                <a class="dropdown-item" href="javascript:void(0);" onclick="getPromotion('2', 'L');">2L</a>
+                <a class="dropdown-item" href="javascript:void(0);" onclick="getPromotion('1', 'L');">1L</a>
+            </div>
+        </div>
+        <br>
+        <h3>Promotion: <span id="promo" style="color: #2196f3"></span></h3>
+        <div id="tables">
+            <h3 style="margin-top: 10px" align="center">Etudiants</h3>
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Num Inscription</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prenom</th>
+                </tr>
+                </thead>
+            </table>
+
+            <h3 style="margin-top: 10px" align="center">Modules</h3>
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nom</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <script src="../Resources/js/jquery-3.4.1.min.js"></script>
+    <script src="../Resources/js/bootstrap.bundle.min.js"></script>
+    <script src="../Resources/js/popper.js"></script>
+    <script src="../Resources/js/bootstrap.min.js"></script>
+    <script src="js/promotion.js"></script>
+    </body>
+</html>
