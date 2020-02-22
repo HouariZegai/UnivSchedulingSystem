@@ -29,7 +29,7 @@
                     <a class="nav-link disabled" href="javascript:void(0);">About</a>
                 </li>
             </ul>
-            <a class="navbar-brand my-2 my-lg-0" href="">&lt;XML Avancé & Web 2.0&gt;</a>
+            <a class="navbar-brand my-2 my-lg-0" href="javascript:void(0);">&lt;XML Avancé & Web 2.0&gt;</a>
         </div>
     </nav>
 
@@ -105,12 +105,16 @@
 
             <!-- add new planning -->
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                 <form>
+                    <div class="form-group">
+                        <label for="formInputPromotion">Promotion</label>
+                        <input type="text" class="form-control" id="formInputPromotion" />
+                    </div>
                     <div class="form-group">
                         <label for="formSelectJour">Jour</label>
                         <select class="form-control" id="formSelectJour">
-                            <option disabled selected>Choisir</option>
+                            <option disabled selected></option>
                             <option>Dimanche</option>
                             <option>Lundi</option>
                             <option>Mardi</option>
@@ -123,7 +127,7 @@
                     <div class="form-group">
                         <label for="formSelectHeureDebut">Heure de debut</label>
                         <select class="form-control" id="formSelectHeureDebut">
-                            <option disabled selected>--:--</option>
+                            <option disabled selected></option>
                             <option>08:00</option>
                             <option>09:30</option>
                             <option>11:00</option>
@@ -135,7 +139,7 @@
                     <div class="form-group">
                         <label for="formSelectHeureFin">Heure de fin</label>
                         <select class="form-control" id="formSelectHeureFin">
-                            <option disabled selected>--:--</option>
+                            <option disabled selected></option>
                             <option>08:00</option>
                             <option>09:30</option>
                             <option>11:00</option>
@@ -147,27 +151,27 @@
                     <div class="form-group">
                         <label for="formSelectProf">Prof</label>
                         <select class="form-control" id="formSelectProf">
-                            <option disabled selected>Choisir</option>
+                            <option disabled selected></option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="formSelectModule">Module</label>
                         <select class="form-control" id="formSelectModule">
-                            <option disabled selected>Choisir</option>
+                            <option disabled selected></option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="formSelectSalle">Salle</label>
                         <select class="form-control" id="formSelectSalle">
-                            <option disabled selected>Choisir</option>
+                            <option disabled selected></option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <button type="button" class="form-control btn btn-info">Ajouter</button>
+                        <button type="button" class="form-control btn btn-info" onclick="addCourseToPlanning()">Ajouter Cours</button>
                     </div>
                 </form>
             </div>
-            <div class="col-sm-1"></div>
+
             <div class="col-sm-8">
                 <h3 style="margin-top: 10px">Planning</h3>
                 <table class="table table-striped table-bordered" style="margin-top: 10px">
@@ -182,18 +186,18 @@
                     </tr>
                     </thead>
                     <tbody id="tbodyAddPlanning">
-
                     </tbody>
                 </table>
+                <button type="button" class="form-control btn btn-success" onclick="addPlanning()">Ajouter Planning</button>
             </div>
         </div>
     </div>
-
-
         <script src="../Resources/js/jquery-3.4.1.min.js"></script>
         <script src="../Resources/js/bootstrap.bundle.min.js"></script>
         <script src="../Resources/js/popper.js"></script>
         <script src="../Resources/js/bootstrap.min.js"></script>
+        <script src="js/FileSaver.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/addPlanning.js"></script>
     </body>
 </html>
